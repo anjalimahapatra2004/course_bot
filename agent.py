@@ -86,7 +86,7 @@ def agent_node(state: State) -> dict:
         return {"messages": [response]}
     except Exception as e:
         logger.warning(f"[agent_node] Tool call failed: {e}")
-        # ⭐ Retry ONCE without tools — fixes "Failed to call a function" error
+        #  Retry ONCE without tools — fixes "Failed to call a function" error
         try:
             logger.info("[agent_node] Retrying without tools...")
             llm_plain = ChatGroq(
